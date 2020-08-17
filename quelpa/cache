@@ -1,0 +1,1 @@
+((clojure-essential-ref-nov :fetcher github :repo "p3r7/clojure-essential-ref") (quelpa :repo "quelpa/quelpa" :fetcher github) (quelpa-use-package :fetcher git :url "https://github.com/quelpa/quelpa-use-package.git"))
