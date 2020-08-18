@@ -9,7 +9,4 @@ buffer is not visiting a file."
                          (completing-read "Find file(as root): ")))
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
-(my-require 'iedit)
-
-
-
+(use-package iedit)

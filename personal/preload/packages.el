@@ -1,5 +1,5 @@
 ;can't live without : preload it so I get it even in the
-             ; event of errors 
+             ; event of errors
  ;; Set up packaging, first with Emacs's built-in "package.el" functionality
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -65,6 +65,17 @@
 (setq quelpa-upgrade-interval 7)
 (add-hook #'after-init-hook #'quelpa-upgrade-all-maybe)
 
+(use-package use-package-ensure)
+(setq use-package-always-ensure t)
+
+(use-package auto-package-update
+	:config
+	(setq auto-package-update-delete-old-versions t)
+	(setq auto-package-update-hide-results t)
+	(auto-package-update-maybe)
+;;	(auto-package-update-at-time "12:25") ; updates at lunch time
+	)
+
 ;; simple benchmark of calls to Emacs require and load functions. It
 ;;can be used to keep track of where time is being spent during Emacs
 ;;startup in order to optimize startup times.
@@ -123,6 +134,14 @@
 
 (use-package diminish)
 
+
+
+(use-package diminish-buffer
+	:config
+	(setq diminish-buffer-list
+		'("[*]helm" "[*]Backtrace[*]"))
+	(diminish-buffer-mode 1))
+
 ;; (use-package discover-my-major)
 
 (use-package dired-details)
@@ -132,9 +151,7 @@
 (use-package dired-collapse)
 (use-package dired-dups)
 
-(use-package dmenu
-  :bind
-  ("s-SPC" . 'dmenu))
+;; (use-package dmenu :bind  ("s-SPC" . 'dmenu))
 
 ;; (use-package dumb-jump)
 
@@ -174,7 +191,7 @@
 
 (use-package geiser)
 
-(use-package gh);; github 
+(use-package gh);; github
 
 (use-package gist)
 

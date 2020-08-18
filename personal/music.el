@@ -1,10 +1,8 @@
 (use-package emms)
 ;; (emms-all);; generates an invalid function error
 (emms-default-players)
-  
+
 (setq emms-source-file-default-directory "~/Music/")
-
-
 
 
 (defun spotify/init-spotify ()

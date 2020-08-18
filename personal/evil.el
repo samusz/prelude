@@ -2,14 +2,20 @@
 
 ;; evil-leader should enable before evil,
 ;; otherwise evil-leader will not work.
-(global-evil-leader-mode)
-(setq evil-leader/in-all-states t)
-(setq evil-leader/non-normal-prefix "S-")
-(evil-leader/set-leader "<SPC>")
+(use-package evil-leader
+  :config 
+  (global-evil-leader-mode)
+  (setq evil-leader/in-all-states t)
+  (setq evil-leader/non-normal-prefix "S-")
+  (evil-leader/set-leader "<SPC>")
+  )  
 
 (use-package evil)
 ;;; vim-like keybindings for Emacs
-
+(evil-leader/set-key
+  "e" 'find-file
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer)
 (global-anzu-mode +1)
 (global-set-key [remap query-replace] 'anzu-query-replace)
 (global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
@@ -107,3 +113,17 @@
 ;  :quelpa '(evil-markdown            :fetcher url  :url https://github.com/Somelauw/evil-markdown/blob/master/evil-markdown.el)  :after evil-mode)
 ;; check if inall is done
 
+(use-package evil-easymotion
+  :config
+  (evilem-default-keybindings "SPC")
+  )
+
+
+(use-package evil-expat)
+
+
+(use-package general)
+
+(use-package evil-tabs)
+(use-package evil-tex)
+(use-package evil-rsi) 

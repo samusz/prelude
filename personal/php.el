@@ -1,1 +1,2 @@
-;; (use-package php-mode)
+;; php
+(use-package php-mode)

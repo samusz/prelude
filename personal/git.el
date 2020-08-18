@@ -16,3 +16,10 @@
 
 ;; Do this once then git wont ask for credential ever again on the machine you typed this
 ;; (warn security risks involved)
+
+(use-package magithub
+	:after magit
+	:config
+	(magithub-feature-autoinject t)
+	(setq magithub-clone-default-directory "~/github"))
+(use-package magit-todos)

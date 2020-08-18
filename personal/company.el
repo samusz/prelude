@@ -3,7 +3,7 @@
 
 ;; using Compagny-mode (ac is obsolete)
 (add-hook 'after-init-hook 'global-company-mode)
-;; global activation of the unicode symbol completion 
+;; global activation of the unicode symbol completion
 (add-to-list 'company-backends 'company-math-symbols-unicode)
 
 ;;; Auto-correct
@@ -14,7 +14,6 @@
      (setq auto-correct-predicate (lambda () (nth 8 (syntax-ppss (point)))))))
 
 ;; for text modes, work all the time:
-
 (add-hook 'text-mode-hook
           (lambda ()
             (setq auto-correct-predicate (lambda () t))))
@@ -27,7 +26,6 @@
    (setq auto-correct-predicate
          (lambda () (not (org-in-src-block-p))))))
 
-
 ;; local configuration for TeX modes (compagny-math see https://github.com/vspinu/company-math)
 (defun my-latex-mode-setup ()
   (setq-local company-backends
@@ -35,15 +33,21 @@
                       company-backends)))
 
 (add-hook 'TeX-mode-hook 'my-latex-mode-setup)
-(use-package company-bibtex)
-(add-to-list 'company-backends 'company-bibtex)
+
+
+(use-package company-bibtex
+	:config
+	(add-to-list 'company-backends 'company-bibtex)
+	)
 
 ;; completion by statistics
 (add-hook 'after-init-hook 'company-statistics-mode)
 ;; in a nice box
-(my-require 'company-box)
-(add-hook 'company-mode-hook 'company-box-mode)
-(company-quickhelp-mode)  ;; documentation helps !
+(use-package company-box
+	:config
+	(add-hook 'company-mode-hook 'company-box-mode)
+	(company-quickhelp-mode)  ;; documentation helps !
 
-(eval-after-load 'company
-  '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
+	(eval-after-load 'company
+		'(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
+	)

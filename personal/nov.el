@@ -7,23 +7,23 @@
 ;;             :url https://depp.brause.cc/nov.el.git)
 ;;   :init
 
-;;   :config 
-;;   (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+;;   :config
+;; 	(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
-;; ;; default font 
-;; (defun my-nov-font-setup ()
-;;   (face-remap-add-relative 'variable-pitch :family "Fira Code"
-;;                            :height 1.0))
-;; (add-hook 'nov-mode-hook 'my-nov-font-setup)
+;; 	;; default font
+;; 	(defun my-nov-font-setup ()
+;; 	(face-remap-add-relative 'variable-pitch :family "Fira Code"
+;; 		:height 1.0))
+;; 	(add-hook 'nov-mode-hook 'my-nov-font-setup)
+;; 	)
 
-;; ;; Change to justification algorithm
-;; ;; use Knth/Plass see https://github.com/Fuco1/justify-kp
+;; Change to justification algorithm
+;; use Knth/Plass see https://github.com/Fuco1/justify-kp
 ;; (use-package justify-kp
-;;   :defer t
-;;   :init
-;;   (setq nov-text-width t)
-;;   )
-
+;; 	:defer t
+;; 	:init
+;; 	(setq nov-text-width t)
+;; 	)
 
 ;; (defun my-nov-window-configuration-change-hook ()
 ;;   (my-nov-post-html-render-hook)
