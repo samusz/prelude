@@ -325,15 +325,13 @@
 
 ;; (use-package slime)
 
-(use-package smart-mode-line
-  :ensure t)
+(use-package smart-mode-line)
 
 ;; (use-package smartrep)
 
 ;; (use-package smex)
 
-(use-package solarized-theme
-  :ensure t)
+(use-package solarized-theme)
 
 ;; (use-package swiper)
 
@@ -341,8 +339,7 @@
 
 ;; (use-package tuareg)
 
-(use-package undo-tree
-  :ensure t)
+(use-package undo-tree)
 
 ;; (use-package use-package)
 
@@ -350,24 +347,19 @@
 
 ;; (use-package wc-mode)
 
-(use-package which-key
-  :ensure t)
+(use-package which-key)
 
 ;; (use-package with-editor)
 
 ;; (use-package ws-butler)
 
-(use-package xterm-color
-  :ensure t)
+(use-package xterm-color)
 
-(use-package yaml-mode
-  :ensure t)
+(use-package yaml-mode)
 
-(use-package yasnippet
-  :ensure t)
+(use-package yasnippet)
 
-(use-package zenburn-theme
-  :ensure t)
+(use-package zenburn-theme)
 
 ;; (use-package zop-to-char)
 
